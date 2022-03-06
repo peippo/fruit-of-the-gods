@@ -1,3 +1,22 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.splash-section:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	background-color: #fc5404;
+	top: 5rem;
+	right: 18rem;
+	border-radius: 1000px;
+	transition: all 0.5s ease-in;
+}
+
+.splash-section--active:after {
+	width: 200%;
+	height: 300%;
+	top: -50%;
+	right: -50%;
+}
