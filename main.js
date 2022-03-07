@@ -4,24 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to("#falling-persimmon", {
-	y: () =>
-		document.getElementById("splash-section").getBoundingClientRect().top +
-		window.scrollY,
-	rotation: 180,
-	scale: 3,
-	scrollTrigger: {
-		pin: true,
-		// markers: true,
-		trigger: "#falling-persimmon",
-		start: "-100px top",
-		end: () =>
-			document.getElementById("splash-section").getBoundingClientRect().top +
-			window.scrollY,
-		scrub: 1,
-	},
-});
-
 const headerTL = gsap
 	.timeline({
 		defaults: { ease: "sine" },
@@ -35,6 +17,24 @@ const headerTL = gsap
 		{ y: -40, opacity: 0, duration: 0.8, stagger: 0.3 },
 		"-=0.1"
 	);
+
+gsap.to("#falling-persimmon", {
+	y: () =>
+		document.getElementById("splash-section").getBoundingClientRect().top +
+		window.scrollY,
+	rotation: 180,
+	scale: 3,
+	scrollTrigger: {
+		pin: true,
+		// markers: true,
+		trigger: "#falling-persimmon",
+		start: "-100px top",
+		end: () =>
+			document.getElementById("splash-section").getBoundingClientRect()
+				.bottom + window.scrollY,
+		scrub: 1,
+	},
+});
 
 const introductionTL = gsap
 	.timeline({
@@ -55,11 +55,11 @@ ScrollTrigger.create({
 	end: "bottom top",
 	toggleClass: "splash-section--active",
 	onEnter: () =>
-		document.getElementById("falling-persimmon").classList.add("opacity-0"),
+		document.getElementById("falling-persimmon").classList.add("!opacity-0"),
 	onLeaveBack: () =>
 		document
 			.getElementById("falling-persimmon")
-			.classList.remove("opacity-0"),
+			.classList.remove("!opacity-0"),
 });
 
 const varietiesTL = gsap
