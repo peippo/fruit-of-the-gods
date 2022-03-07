@@ -32,3 +32,17 @@ ScrollTrigger.create({
 			.getElementById("falling-persimmon")
 			.classList.remove("opacity-0"),
 });
+
+const varietiesTL = gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: ".splash-section",
+			start: "top 60%",
+			end: "bottom top",
+			toggleActions: "play pause resume reverse",
+		},
+		defaults: { duration: 0.3 },
+	})
+	.from(".varieties__heading", { y: -100, opacity: 0 })
+	.from(".varieties__hachiya", { y: -100, opacity: 0 }, "-=0.15")
+	.from(".varieties__fuyu", { y: -100, opacity: 0 }, "-=0.1");
