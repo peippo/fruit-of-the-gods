@@ -5,11 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to("#falling-persimmon", {
-	y: 1000,
+	y: () =>
+		document.getElementById("splash-section").getBoundingClientRect().top +
+		window.scrollY,
 	rotation: 180,
-	scale: 2,
+	scale: 3,
 	scrollTrigger: {
 		pin: true,
+		// markers: true,
 		trigger: "#falling-persimmon",
 		start: "-100px top",
 		end: () =>
@@ -18,6 +21,32 @@ gsap.to("#falling-persimmon", {
 		scrub: 1,
 	},
 });
+
+const headerTL = gsap
+	.timeline({
+		defaults: { ease: "sine" },
+	})
+	.from(".tree", { duration: 2, opacity: 0 })
+	.from("#falling-persimmon", { opacity: 0 }, "<")
+	.delay(0.5)
+	.from(".header__sub", { y: -20, opacity: 0 })
+	.from(
+		".split",
+		{ y: -40, opacity: 0, duration: 0.8, stagger: 0.3 },
+		"-=0.1"
+	);
+
+const introductionTL = gsap
+	.timeline({
+		scrollTrigger: {
+			trigger: ".introduction",
+			start: "top center",
+			end: "bottom top",
+			toggleActions: "play pause resume reverse",
+		},
+		defaults: { duration: 0.5 },
+	})
+	.from(".introduction", { y: -100, opacity: 0 });
 
 ScrollTrigger.create({
 	// markers: true,
