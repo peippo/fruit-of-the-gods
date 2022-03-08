@@ -41,3 +41,19 @@
 		transform: rotate(20deg);
 	}
 }
+
+.months {
+	width: 600%;
+}
+
+.month {
+	width: 33vw;
+}
+
+.season-hachiya {
+	width: 60vw;
+}
+
+.season-fuyu {
+	width: 93vw;
+}

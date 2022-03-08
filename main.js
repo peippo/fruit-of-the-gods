@@ -75,3 +75,15 @@ const varietiesTL = gsap
 	.from(".varieties__heading", { y: -100, opacity: 0 })
 	.from(".varieties__hachiya", { y: -100, opacity: 0 }, "-=0.15")
 	.from(".varieties__fuyu", { y: -100, opacity: 0 }, "-=0.1");
+
+const months = gsap.utils.toArray(".month");
+
+gsap.to(months, {
+	xPercent: -100 * (months.length - 3),
+	scrollTrigger: {
+		trigger: ".months-section",
+		scrub: 1,
+		start: "top bottom",
+		end: "top 20%",
+	},
+});

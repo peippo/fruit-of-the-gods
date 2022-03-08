@@ -16,6 +16,7 @@ module.exports = {
 			"orange-1": "#f9b208",
 			"orange-2": "#f98404",
 			"orange-3": "#fc5404",
+			darkgreen: "#525e10",
 		},
 		fontFamily: {
 			serif: ["Abril Fatface", "cursive"],
