@@ -57,3 +57,90 @@
 .season-fuyu {
 	width: 93vw;
 }
+
+.map path,
+.map circle,
+.map ellipse {
+	fill: rgba(255, 255, 255, 0.4);
+}
+
+.map-marker--china {
+	top: 30%;
+	left: 40%;
+}
+
+.map-marker--korea {
+	top: 45%;
+	left: 60%;
+}
+
+.map-marker--japan {
+	top: 40%;
+	left: 75%;
+}
+
+@media (max-width: 1440px) {
+	.map {
+		width: 150%;
+		transform: translateX(-28%);
+	}
+
+	.map-marker--china {
+		top: 30%;
+		left: 20%;
+	}
+
+	.map-marker--korea {
+		top: 45%;
+		left: 50%;
+	}
+
+	.map-marker--japan {
+		top: 40%;
+		left: 75%;
+	}
+}
+
+@media (max-width: 976px) {
+	.map {
+		width: 150%;
+		transform: translateX(-28%);
+	}
+
+	.map-marker--china {
+		top: 25%;
+		left: 15%;
+	}
+
+	.map-marker--korea {
+		top: 45%;
+		left: 46%;
+	}
+
+	.map-marker--japan {
+		top: 40%;
+		left: 73%;
+	}
+}
+
+@media (max-width: 768px) {
+	.map {
+		width: 200%;
+		transform: translateX(-35%);
+	}
+
+	.map-marker--china {
+		top: 35%;
+		left: 10%;
+	}
+
+	.map-marker--korea {
+		top: 55%;
+		left: 45%;
+	}
+
+	.map-marker--japan {
+		top: 45%;
+		left: 80%;
+	}
+}
