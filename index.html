@@ -10,15 +10,16 @@
 			href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Persimmon - Fruit of the gods</title>
+		<title>Persimmon - Fruit of the Gods</title>
 	</head>
 	<body>
-		<header class="bg-yellow h-screen">
+		<header class="bg-gray h-screen">
 			<div class="container mx-auto h-full">
 				<div
-					class="flex flex-col justify-end items-start md:w-9/12 xl:w-8/12 h-full z-10 relative"
+					class="header__content flex flex-col justify-end items-start md:w-9/12 xl:w-8/12 h-full z-10 relative"
 				>
-					<span class="header__sub text-2xl md:text-3xl font-bold"
+					<span
+						class="header__sub text-2xl md:text-3xl text-white font-bold"
 						>Persimmon</span
 					>
 					<h1
@@ -28,7 +29,7 @@
 						<div class="split mr-8">of</div>
 						<br />
 						<div class="split mr-8">the</div>
-						<div class="split mr-8">gods</div>
+						<div class="split">Gods</div>
 					</h1>
 				</div>
 			</div>
@@ -38,22 +39,27 @@
 			/>
 			<img
 				id="falling-persimmon"
-				class="absolute top-36 right-72 transition-opacity"
+				class="absolute top-36 right-36 md:right-72 transition-opacity"
 				src="assets/images/persimmon.svg"
 			/>
 		</header>
 
 		<section class="introduction py-32">
 			<div class="container mx-auto">
-				<p class="md:text-xl md:leading-9 md:w-2/3 xl:w-1/2">
-					The Japanese persimmon, or kaki (<em>Diospyros kaki</em>).
-					Diospyros is often translated as “fruit of the Gods. This
-					thin-skinned, golden fruit requires thought and time to enjoy at
-					its best. When ripe and firm the flesh of traditional varieties
-					is very astringent and unpleasant. However, once fully ripened,
-					when it softens to a satiny jelly, the flesh is wonderfully
-					textured and both taste and scent are delightfully rich and
-					aromatic without being overpowering.
+				<p
+					class="md:text-xl md:leading-9 md:w-2/3 xl:w-3/4 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:font-serif first-letter:mr-3 first-letter:float-left"
+				>
+					Diospyros kaki is the scientific name of the
+					<strong>Japanese persimmon</strong>. Diospyros is often
+					translated as “fruit of the Gods.
+				</p>
+				<p class="md:text-xl md:leading-9 md:w-2/3 xl:w-3/4 mt-6">
+					This thin-skinned, golden fruit requires thought and time to
+					enjoy at its best. When ripe and firm the flesh of traditional
+					varieties is very astringent and unpleasant. However, once fully
+					ripened, when it softens to a satiny jelly, the flesh is
+					wonderfully textured and both taste and scent are delightfully
+					rich and aromatic without being overpowering.
 				</p>
 			</div>
 		</section>
@@ -10281,7 +10287,7 @@
 				</svg>
 
 				<div
-					class="map-marker map-marker--china bg-darkgreen/80 aspect-square rounded-full p-8 md:text-3xl text-white flex flex-col items-center justify-center absolute"
+					class="map-marker map-marker--china bg-darkgreen/80 aspect-square rounded-full p-8 md:text-3xl lg:text-5xl text-white flex flex-col items-center justify-center absolute"
 				>
 					China <strong>2.1M</strong>
 				</div>

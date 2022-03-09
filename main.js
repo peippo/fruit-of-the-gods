@@ -9,7 +9,7 @@ const animations = () => {
 		.timeline({
 			defaults: { ease: "sine" },
 		})
-		.from(".tree", { duration: 2, opacity: 0 })
+		.from(".tree", { duration: 1, opacity: 0 })
 		.from("#falling-persimmon", { opacity: 0 }, "<")
 		.delay(0.5)
 		.from(".header__sub", { y: -20, opacity: 0 })
@@ -19,6 +19,18 @@ const animations = () => {
 			"-=0.1"
 		);
 
+	gsap.to(".header__content", {
+		y: -50,
+		opacity: 0,
+		duration: 0.75,
+		scrollTrigger: {
+			trigger: "header",
+			start: "20% top",
+			end: "100% top",
+			toggleActions: "play pause resume reverse",
+		},
+	});
+
 	gsap.to("#falling-persimmon", {
 		y: () =>
 			document.getElementById("splash-section").getBoundingClientRect().top +
@@ -27,7 +39,6 @@ const animations = () => {
 		scale: 3,
 		scrollTrigger: {
 			pin: true,
-			// markers: true,
 			trigger: "#falling-persimmon",
 			start: "-100px top",
 			end: () =>
