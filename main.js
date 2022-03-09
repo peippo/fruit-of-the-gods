@@ -168,6 +168,18 @@ const animations = () => {
 			duration: 0.5,
 		})
 	);
+
+	gsap.to(".slice", {
+		ease: "none",
+		rotate: 360,
+		duration: 30,
+		repeat: -1,
+		scrollTrigger: {
+			trigger: ".ending",
+			start: "top bottom",
+			toggleActions: "play pause resume pause",
+		},
+	});
 };
 
 window.addEventListener("load", () => {
