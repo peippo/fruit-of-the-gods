@@ -2,7 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.splash-section:after {
+/* Varieties section */
+.varieties:after {
 	content: "";
 	position: absolute;
 	width: 0;
@@ -15,12 +16,12 @@
 }
 
 @media (min-width: 768px) {
-	.splash-section:after {
+	.varieties:after {
 		right: 18rem;
 	}
 }
 
-.splash-section--active:after {
+.varieties--active:after {
 	z-index: -1;
 	width: 200%;
 	height: 300%;
@@ -28,7 +29,7 @@
 	right: -50%;
 }
 
-.divider:after {
+.varieties__hachiya:after {
 	content: "";
 	position: absolute;
 	width: 2px;
@@ -40,7 +41,7 @@
 }
 
 @media (min-width: 768px) {
-	.divider:after {
+	.varieties__hachiya:after {
 		left: auto;
 		right: -3rem;
 		top: -50%;
@@ -48,22 +49,24 @@
 	}
 }
 
-.months {
+/* Season section */
+.months__scroller {
 	width: 600%;
 }
 
-.month {
+.months__month {
 	width: 33vw;
 }
 
-.season-hachiya {
+.months__hachiya {
 	width: 60vw;
 }
 
-.season-fuyu {
+.months__fuyu {
 	width: 93vw;
 }
 
+/* Map section */
 .map path,
 .map circle,
 .map ellipse {
@@ -108,11 +111,6 @@
 }
 
 @media (max-width: 976px) {
-	.map {
-		width: 150%;
-		transform: translateX(-28%);
-	}
-
 	.map-marker--china {
 		top: 25%;
 		left: 15%;

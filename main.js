@@ -5,16 +5,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const animations = () => {
-	const headerTL = gsap
+	// Header section
+	gsap
 		.timeline({
 			defaults: { ease: "sine" },
 		})
-		.from(".tree", { duration: 1, opacity: 0 })
-		.from("#falling-persimmon", { opacity: 0 }, "<")
+		.from(".header__tree", { duration: 1, opacity: 0 })
+		.from("#header__persimmon", { opacity: 0 }, "<")
 		.delay(0.5)
 		.from(".header__sub", { y: -20, opacity: 0 })
 		.from(
-			".split",
+			".header__heading-slice",
 			{ y: -40, opacity: 0, duration: 0.8, stagger: 0.3 },
 			"-=0.1"
 		);
@@ -31,24 +32,25 @@ const animations = () => {
 		},
 	});
 
-	gsap.to("#falling-persimmon", {
+	gsap.to("#header__persimmon", {
 		y: () =>
-			document.getElementById("splash-section").getBoundingClientRect().top +
+			document.getElementById("varieties").getBoundingClientRect().top +
 			window.scrollY,
 		rotation: 180,
 		scale: 3,
 		scrollTrigger: {
 			pin: true,
-			trigger: "#falling-persimmon",
+			trigger: "#header__persimmon",
 			start: "-100px top",
 			end: () =>
-				document.getElementById("splash-section").getBoundingClientRect()
+				document.getElementById("varieties").getBoundingClientRect()
 					.bottom + window.scrollY,
 			scrub: 1,
 		},
 	});
 
-	const introductionTL = gsap
+	// Introduction section
+	gsap
 		.timeline({
 			scrollTrigger: {
 				trigger: ".introduction",
@@ -61,25 +63,25 @@ const animations = () => {
 		.from(".introduction", { y: -100, opacity: 0 });
 
 	ScrollTrigger.create({
-		// markers: true,
-		trigger: ".splash-section",
+		trigger: ".varieties",
 		start: "top 80%",
 		end: "bottom top",
-		toggleClass: "splash-section--active",
+		toggleClass: "varieties--active",
 		onEnter: () =>
 			document
-				.getElementById("falling-persimmon")
+				.getElementById("header__persimmon")
 				.classList.add("!opacity-0"),
 		onLeaveBack: () =>
 			document
-				.getElementById("falling-persimmon")
+				.getElementById("header__persimmon")
 				.classList.remove("!opacity-0"),
 	});
 
-	const varietiesTL = gsap
+	// Varieties section
+	gsap
 		.timeline({
 			scrollTrigger: {
-				trigger: ".splash-section",
+				trigger: ".varieties",
 				start: "top 60%",
 				end: "bottom top",
 				toggleActions: "play pause resume reverse",
@@ -90,18 +92,20 @@ const animations = () => {
 		.from(".varieties__hachiya", { y: -100, opacity: 0 }, "-=0.15")
 		.from(".varieties__fuyu", { y: -100, opacity: 0 }, "-=0.1");
 
-	const months = gsap.utils.toArray(".month");
+	// Season section
+	const months = gsap.utils.toArray(".months__month");
 
 	gsap.to(months, {
 		xPercent: -100 * (months.length - 3),
 		scrollTrigger: {
-			trigger: ".months-section",
+			trigger: ".months",
 			scrub: 1,
 			start: "top bottom",
 			end: "top 20%",
 		},
 	});
 
+	// Map section
 	let china = gsap.utils.toArray(".map #china path");
 	let japan = gsap.utils.toArray(".map #japan path");
 	let korea = gsap.utils.toArray(".map #korea path");
@@ -169,7 +173,8 @@ const animations = () => {
 		})
 	);
 
-	gsap.to(".slice", {
+	// Ending section
+	gsap.to(".ending__slice", {
 		ease: "none",
 		rotate: 360,
 		duration: 30,
