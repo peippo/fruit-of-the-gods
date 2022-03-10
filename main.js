@@ -5,6 +5,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const animations = () => {
+	gsap.from("body", { ease: "linear", autoAlpha: 0 });
+
 	// Header section
 	gsap
 		.timeline({
@@ -60,7 +62,7 @@ const animations = () => {
 			},
 			defaults: { duration: 0.5 },
 		})
-		.from(".introduction", { y: -100, opacity: 0 });
+		.from(".introduction__content", { y: -100, opacity: 0 });
 
 	ScrollTrigger.create({
 		trigger: ".varieties",
