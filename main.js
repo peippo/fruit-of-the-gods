@@ -64,22 +64,24 @@ const animations = () => {
 		})
 		.from(".introduction__content", { y: -100, opacity: 0 });
 
+	// Varieties section
+	const headerPersimmon = document.getElementById("header__persimmon");
+	const varietiesSection = document.getElementById("varieties");
+
 	ScrollTrigger.create({
 		trigger: ".varieties",
 		start: "top 80%",
 		end: "bottom top",
-		toggleClass: "varieties--active",
-		onEnter: () =>
-			document
-				.getElementById("header__persimmon")
-				.classList.add("!opacity-0"),
-		onLeaveBack: () =>
-			document
-				.getElementById("header__persimmon")
-				.classList.remove("!opacity-0"),
+		onEnter: () => {
+			headerPersimmon.classList.add("!opacity-0");
+			varietiesSection.classList.add("varieties--active");
+		},
+		onLeaveBack: () => {
+			headerPersimmon.classList.remove("!opacity-0");
+			varietiesSection.classList.remove("varieties--active");
+		},
 	});
 
-	// Varieties section
 	gsap
 		.timeline({
 			scrollTrigger: {
